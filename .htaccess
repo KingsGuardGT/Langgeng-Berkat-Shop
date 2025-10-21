@@ -1,3 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # If the request is already for the public directory, skip
+    RewriteCond %{REQUEST_URI} ^/public/ [NC]
+    RewriteRule ^ - [L]
+
+    # Redirect everything to the public directory
+    RewriteRule ^(.*)$ public/$1 [L,QSA]
+</IfModule>
+
+# Fallback to Laravel's front controller if supported
+DirectoryIndex public/index.php
 RewriteEngine on
 
 # Redirect Trailing Slashes If Not A Folder...
