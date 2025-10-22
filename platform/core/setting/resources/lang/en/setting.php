@@ -315,10 +315,6 @@ return [
         's3_path' => 'Custom S3 Path (Optional)',
         's3_path_placeholder' => 'Optional custom path in S3 bucket (e.g., uploads/media)',
     ],
-    'license' => [
-        'purchase_code' => 'Purchase code',
-        'buyer' => 'Buyer',
-    ],
     'field_type_not_exists' => 'This field type does not exist',
     'save_settings' => 'Save settings',
     'template' => 'Template',
@@ -387,7 +383,7 @@ return [
     'panel' => [
         'common' => 'Common',
         'general' => 'General',
-        'general_description' => 'View and update your general settings and activate license',
+        'general_description' => 'View and update your general settings',
         'email' => 'Email',
         'email_description' => 'View and update your email settings and email templates',
         'media' => 'Media',
