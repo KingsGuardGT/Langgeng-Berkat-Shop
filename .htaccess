@@ -1,23 +1,16 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # If the request is already for the public directory, skip
+    # Serve the application from the public/ directory without changing docroot.
+    # 1) Root request -> send to public/index.php
+    RewriteRule ^$ public/index.php [L]
+
+    # 2) If already targeting /public/, do nothing
     RewriteCond %{REQUEST_URI} ^/public/ [NC]
     RewriteRule ^ - [L]
 
-    # Redirect everything to the public directory
+    # 3) Otherwise, rewrite everything into public/
     RewriteRule ^(.*)$ public/$1 [L,QSA]
 </IfModule>
 
-# Fallback to Laravel's front controller if supported
-DirectoryIndex public/index.php
-RewriteEngine on
-
-# Redirect Trailing Slashes If Not A Folder...
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} (.+)/$
-RewriteRule ^ %1 [L,R=301]
-
-RewriteCond %{REQUEST_URI} !^public
-
-RewriteRule ^(.*)$ public/$1 [L]
+# Do not try to set DirectoryIndex to a subdirectory on shared hosting; Apache may return 403.
