@@ -35,7 +35,5 @@
         Theme::asset()->container('footer')->remove('simple-slider-js');
     @endphp
 
-    {{-- Temporarily disabled Theme::header() to avoid runtime-injected malformed Blade while debugging
-        the unexpected end-of-file parse error. Re-enable after identifying/fixing the source. --}}
-    {{-- {!! Theme::header() !!} --}}
+    {!! Theme::header() !!}
 </head>
