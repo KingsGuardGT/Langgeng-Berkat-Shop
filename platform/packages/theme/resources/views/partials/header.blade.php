@@ -16,10 +16,10 @@
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "{{ rescue(fn() => SeoHelper::openGraph()->getProperty('site_name')) }}",
-  "url": "{{ url('') }}"
+    "@@context": "https://schema.org",
+    "@@type": "WebSite",
+    "name": "{{ rescue(fn() => SeoHelper::openGraph()->getProperty('site_name')) }}",
+    "url": "{{ url('') }}"
 }
 </script>
 
