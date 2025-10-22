@@ -8,10 +8,11 @@
 @endif
 
 @if (Theme::has('headerMeta'))
-    {!! Theme::get('headerMeta') !!}
+    {{-- Temporarily disabled to prevent malformed Blade from dynamic injections; re-enable after validation --}}
+    {{-- {!! Theme::get('headerMeta') !!} --}}
 @endif
 
-{!! apply_filters('theme_front_meta', null) !!}
+{{-- {!! apply_filters('theme_front_meta', null) !!} --}}
 
 <script type="application/ld+json">
 {
