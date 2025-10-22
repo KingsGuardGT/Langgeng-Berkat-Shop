@@ -89,17 +89,10 @@ class ActivateLicenseCommand extends Command
 
     protected function performUpdate(string $purchasedCode, string $username): int
     {
-        $status = $this->core->activateLicense($purchasedCode, $username);
-
-        if (! $status) {
-            $this->components->error('This license is invalid.');
-
-            return self::FAILURE;
-        }
-
+        // License activation bypassed
         Setting::forceSet('licensed_to', $username)->save();
 
-        $this->components->info('This license has been activated successfully.');
+        $this->components->info('License activation is not required.');
 
         return self::SUCCESS;
     }

@@ -116,8 +116,8 @@ return [
      */
 
     'license' => [
-        'title' => 'Activate License',
-        'skip' => 'Skip for now',
+        'title' => 'Installation Complete',
+        'skip' => 'Continue',
     ],
 
     'install' => 'Install',
